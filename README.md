@@ -29,11 +29,20 @@ This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all 
 
 ### Installation
 
-#### Conda (Recommended)
+#### Install miniConda 
+```bash
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/M... -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+~/miniconda3/bin/conda init bash
+//optional clean up
+rm -rf ~/miniconda3/miniconda.sh
+```
+#### Setup 
 
 ```bash
 # Tensorflow CPU
-conda env create -n raspi5-yolov3 python==3.10
+conda env create -n raspi5-yolov3 python==3.11
 conda activate raspi5-yolov3
 ```
 
