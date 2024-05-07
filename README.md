@@ -33,9 +33,8 @@ This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all 
 
 ```bash
 # Tensorflow CPU
-conda env create -n raspi5-yolov3
+conda env create -n raspi5-yolov3 python==3.10
 conda activate raspi5-yolov3
-
 ```
 
 #### Pip
@@ -112,38 +111,6 @@ yolo_nms_1: scores
 yolo_nms_2: classes
 yolo_nms_3: numbers of valid detections
 ```
-
-## Benchmark (No Training Yet)
-
-Numbers are obtained with rough calculations from `detect_video.py`
-
-### Macbook Pro 13 (2.7GHz i5)
-
-| Detection   | 416x416 | 320x320 | 608x608 |
-|-------------|---------|---------|---------|
-| YoloV3      | 1000ms  | 500ms   | 1546ms  |
-| YoloV3-Tiny | 100ms   | 58ms    | 208ms   |
-
-### Desktop PC (GTX 970)
-
-| Detection   | 416x416 | 320x320 | 608x608 |
-|-------------|---------|---------|---------|
-| YoloV3      | 74ms    | 57ms    | 129ms   |
-| YoloV3-Tiny | 18ms    | 15ms    | 28ms    |
-
-### AWS g3.4xlarge (Tesla M60)
-
-| Detection   | 416x416 | 320x320 | 608x608 |
-|-------------|---------|---------|---------|
-| YoloV3      | 66ms    | 50ms    | 123ms   |
-| YoloV3-Tiny | 15ms    | 10ms    | 24ms    |
-
-### RTX 2070 (credit to @AnaRhisT94)
-
-| Detection   | 416x416 |
-|-------------|---------|
-| YoloV3 predict_on_batch     | 29-32ms    | 
-| YoloV3 predict_on_batch + TensorRT     | 22-28ms    | 
 
 
 Darknet version of YoloV3 at 416x416 takes 29ms on Titan X.
