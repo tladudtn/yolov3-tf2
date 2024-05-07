@@ -17,7 +17,6 @@ This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all 
 - [x] Input pipeline using `tf.data`
 - [x] Tensorflow Serving
 - [x] Vectorized transformations
-- [x] GPU accelerated
 - [x] Fully integrated with `absl-py` from [abseil.io](https://abseil.io)
 - [x] Clean implementation
 - [x] Following the best practices
@@ -34,28 +33,15 @@ This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all 
 
 ```bash
 # Tensorflow CPU
-conda env create -f conda-cpu.yml
-conda activate yolov3-tf2-cpu
+conda env create -n raspi5-yolov3
+conda activate raspi5-yolov3
 
-# Tensorflow GPU
-conda env create -f conda-gpu.yml
-conda activate yolov3-tf2-gpu
 ```
 
 #### Pip
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Nvidia Driver (For GPU)
-
-```bash
-# Ubuntu 18.04
-sudo apt-add-repository -r ppa:graphics-drivers/ppa
-sudo apt install nvidia-driver-430
-# Windows/Other
-https://www.nvidia.com/Download/index.aspx
 ```
 
 ### Convert pre-trained Darknet weights
@@ -80,7 +66,7 @@ python detect.py --image ./data/meme.jpg
 python detect.py --weights ./checkpoints/yolov3-tiny.tf --tiny --image ./data/street.jpg
 
 # webcam
-python detect_video.py --video 0
+
 
 # video file
 python detect_video.py --video path_to_file.mp4 --weights ./checkpoints/yolov3-tiny.tf --tiny
@@ -342,9 +328,11 @@ train.py:
 
 ## Change Log
 
-#### October 1, 2019
-
+#### 2019/08/1
 - Updated to Tensorflow to v2.0.0 Release
+
+#### 2024/05/08
+-  fork repo
 
 
 ## References
